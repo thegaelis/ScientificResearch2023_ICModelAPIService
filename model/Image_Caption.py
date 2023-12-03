@@ -15,12 +15,12 @@ class Image_Caption:
     vgg_model = VGG16()
     vgg_model = Model(inputs=vgg_model.inputs, outputs=vgg_model.layers[-2].output)
 
-    model = load_model('best_model.h5')
+    model = load_model('model/best_model.h5')
 
-    with open('features.pkl', 'rb') as f:
+    with open('model/features.pkl', 'rb') as f:
         features = pickle.load(f)
 
-    with open('tokenizer.pkl', 'rb') as f:
+    with open('model/tokenizer.pkl', 'rb') as f:
         tokenizer = pickle.load(f)
 
     def image_from_base64(self, base64_str):

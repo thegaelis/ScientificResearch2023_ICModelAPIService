@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
-from Image_Caption import Image_Caption
 from pydantic import BaseModel
+from model.Image_Caption import Image_Caption
 
 app = FastAPI(swagger_ui_parameters={"syntaxHighlight": False})
 
@@ -24,4 +24,5 @@ async def predict(datapassin: Datapassin):
     }
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='127.0.0.1', port=5200)
+
